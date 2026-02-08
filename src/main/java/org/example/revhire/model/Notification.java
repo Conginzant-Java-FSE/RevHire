@@ -1,0 +1,4 @@
+package org.example.revhire.model;
+
+public class Notification {
+}
