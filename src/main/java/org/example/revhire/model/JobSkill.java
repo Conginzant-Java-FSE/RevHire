@@ -8,9 +8,21 @@ import org.example.revhire.enums.JobType;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
+
 @Entity
-@Table(name="job_skills")
+@Table(name = "job_skills")
 public class JobSkill {
+
+
+    protected JobSkill() {
+    }
+
+
+    public JobSkill(Job job, String skill) {
+        this.job = job;
+        this.skill = skill;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -21,14 +33,8 @@ public class JobSkill {
 
     private String skill;
 
-
-
     public Long getId() {
         return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public Job getJob() {
@@ -46,5 +52,4 @@ public class JobSkill {
     public void setSkill(String skill) {
         this.skill = skill;
     }
-
 }

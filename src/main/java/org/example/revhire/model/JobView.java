@@ -8,9 +8,21 @@ import org.example.revhire.enums.JobType;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
+
 @Entity
 @Table(name = "job_views")
 public class JobView {
+
+
+    protected JobView() {
+    }
+
+
+    public JobView(Job job, User user) {
+        this.job = job;
+        this.user = user;
+        this.viewedAt = LocalDateTime.now();
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,14 +38,8 @@ public class JobView {
 
     private LocalDateTime viewedAt = LocalDateTime.now();
 
-
-
     public Long getId() {
         return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public Job getJob() {

@@ -1,7 +1,6 @@
 package org.example.revhire.model;
 
 import jakarta.persistence.*;
-import org.example.revhire.model.User;
 import org.example.revhire.enums.JobStatus;
 import org.example.revhire.enums.JobType;
 
@@ -10,12 +9,46 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
-@Table(name="jobs")
+@Table(name = "jobs")
 public class Job {
+
+
+    protected Job() {
+    }
+
+
+    public Job(User employer,
+               String title,
+               String description,
+               String requirements,
+               String skillsRequired,
+               String location,
+               Integer salaryMin,
+               Integer salaryMax,
+               JobType jobType,
+               Integer experienceYears,
+               Integer openings,
+               LocalDate deadline) {
+
+        this.employer = employer;
+        this.title = title;
+        this.description = description;
+        this.requirements = requirements;
+        this.skillsRequired = skillsRequired;
+        this.location = location;
+        this.salaryMin = salaryMin;
+        this.salaryMax = salaryMax;
+        this.jobType = jobType;
+        this.experienceYears = experienceYears;
+        this.openings = openings;
+        this.deadline = deadline;
+        this.status = JobStatus.OPEN;
+        this.postedAt = LocalDateTime.now();
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
 
     @ManyToOne
     @JoinColumn(name = "employer_id")
@@ -50,7 +83,6 @@ public class Job {
 
     private LocalDateTime postedAt = LocalDateTime.now();
 
-
     @OneToMany(mappedBy = "job", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<JobSkill> jobSkills;
 
@@ -61,10 +93,6 @@ public class Job {
 
     public Long getId() {
         return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public User getEmployer() {
@@ -175,4 +203,3 @@ public class Job {
         return postedAt;
     }
 }
-
