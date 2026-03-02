@@ -6,7 +6,6 @@ import org.example.revhire.dto.response.ApplicationResponse;
 import org.example.revhire.model.Applications;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-import org.mapstruct.factory.Mappers;
 
 @Mapper(componentModel = "spring")
 public interface ApplicationMapper {
