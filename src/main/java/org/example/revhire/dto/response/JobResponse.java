@@ -18,11 +18,13 @@ public class JobResponse extends RepresentationModel<JobResponse> {
     private String title;
     private String description;
     private String requirements;
+    private String requiredEducationLevel;
     private String location;
     private Integer salaryMin;
     private Integer salaryMax;
     private JobType jobType;
     private Integer experienceYears;
+    private Integer maxExperienceYears;
     private Integer openings;
     private LocalDate deadline;
     private JobStatus status;
@@ -36,8 +38,10 @@ public class JobResponse extends RepresentationModel<JobResponse> {
     }
 
     public JobResponse(Long id, Long employerId, String employerName, String companyName, String title,
-                       String description, String requirements, String location, Integer salaryMin, Integer salaryMax,
-                       JobType jobType, Integer experienceYears, Integer openings, LocalDate deadline, JobStatus status,
+                       String description, String requirements, String requiredEducationLevel, String location, Integer salaryMin,
+                       Integer salaryMax,
+                       JobType jobType, Integer experienceYears, Integer maxExperienceYears, Integer openings, LocalDate deadline,
+                       JobStatus status,
                        LocalDateTime postedAt, String skillsRequired, List<String> skills) {
         this.id = id;
         this.employerId = employerId;
@@ -46,11 +50,13 @@ public class JobResponse extends RepresentationModel<JobResponse> {
         this.title = title;
         this.description = description;
         this.requirements = requirements;
+        this.requiredEducationLevel = requiredEducationLevel;
         this.location = location;
         this.salaryMin = salaryMin;
         this.salaryMax = salaryMax;
         this.jobType = jobType;
         this.experienceYears = experienceYears;
+        this.maxExperienceYears = maxExperienceYears;
         this.openings = openings;
         this.deadline = deadline;
         this.status = status;
@@ -123,6 +129,14 @@ public class JobResponse extends RepresentationModel<JobResponse> {
         this.requirements = requirements;
     }
 
+    public String getRequiredEducationLevel() {
+        return requiredEducationLevel;
+    }
+
+    public void setRequiredEducationLevel(String requiredEducationLevel) {
+        this.requiredEducationLevel = requiredEducationLevel;
+    }
+
     public String getLocation() {
         return location;
     }
@@ -161,6 +175,14 @@ public class JobResponse extends RepresentationModel<JobResponse> {
 
     public void setExperienceYears(Integer experienceYears) {
         this.experienceYears = experienceYears;
+    }
+
+    public Integer getMaxExperienceYears() {
+        return maxExperienceYears;
+    }
+
+    public void setMaxExperienceYears(Integer maxExperienceYears) {
+        this.maxExperienceYears = maxExperienceYears;
     }
 
     public Integer getOpenings() {

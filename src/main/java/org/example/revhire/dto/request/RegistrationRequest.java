@@ -38,6 +38,16 @@ public class RegistrationRequest {
     private String securityQuestion;
     private String securityAnswer;
 
+    private String otpCode;
+
+    public String getOtpCode() {
+        return otpCode;
+    }
+
+    public void setOtpCode(String otpCode) {
+        this.otpCode = otpCode;
+    }
+
     public RegistrationRequest() {
     }
 
@@ -205,4 +215,3 @@ public class RegistrationRequest {
                 '}';
     }
 }
-

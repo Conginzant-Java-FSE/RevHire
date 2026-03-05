@@ -18,6 +18,7 @@ public class JobPostRequest {
 
     private String description;
     private String requirements;
+    private String requiredEducationLevel;
     private String skillsRequired;
     private String location;
     private Integer salaryMin;
@@ -27,6 +28,7 @@ public class JobPostRequest {
     private JobType jobType;
 
     private Integer experienceYears;
+    private Integer maxExperienceYears;
     private Integer openings;
 
     @Future
@@ -38,18 +40,22 @@ public class JobPostRequest {
     }
 
     public JobPostRequest(Long employerId, String title, String description, String requirements,
+                          String requiredEducationLevel,
                           String skillsRequired, String location, Integer salaryMin, Integer salaryMax, JobType jobType,
-                          Integer experienceYears, Integer openings, LocalDate deadline, List<String> skills) {
+                          Integer experienceYears, Integer maxExperienceYears, Integer openings, LocalDate deadline,
+                          List<String> skills) {
         this.employerId = employerId;
         this.title = title;
         this.description = description;
         this.requirements = requirements;
+        this.requiredEducationLevel = requiredEducationLevel;
         this.skillsRequired = skillsRequired;
         this.location = location;
         this.salaryMin = salaryMin;
         this.salaryMax = salaryMax;
         this.jobType = jobType;
         this.experienceYears = experienceYears;
+        this.maxExperienceYears = maxExperienceYears;
         this.openings = openings;
         this.deadline = deadline;
         this.skills = skills;
@@ -85,6 +91,14 @@ public class JobPostRequest {
 
     public void setRequirements(String requirements) {
         this.requirements = requirements;
+    }
+
+    public String getRequiredEducationLevel() {
+        return requiredEducationLevel;
+    }
+
+    public void setRequiredEducationLevel(String requiredEducationLevel) {
+        this.requiredEducationLevel = requiredEducationLevel;
     }
 
     public String getSkillsRequired() {
@@ -133,6 +147,14 @@ public class JobPostRequest {
 
     public void setExperienceYears(Integer experienceYears) {
         this.experienceYears = experienceYears;
+    }
+
+    public Integer getMaxExperienceYears() {
+        return maxExperienceYears;
+    }
+
+    public void setMaxExperienceYears(Integer maxExperienceYears) {
+        this.maxExperienceYears = maxExperienceYears;
     }
 
     public Integer getOpenings() {

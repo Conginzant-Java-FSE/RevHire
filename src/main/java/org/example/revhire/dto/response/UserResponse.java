@@ -11,14 +11,12 @@ public class UserResponse {
     private String phone;
     private String location;
 
-    // Employer fields
     private String companyName;
     private String industry;
     private String companySize;
     private String description;
     private String website;
 
-    // JobSeeker fields
     private String currentStatus;
     private Integer totalExperience;
 
